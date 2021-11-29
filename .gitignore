@@ -1,0 +1,6 @@
+.serverless
+.npmignore
+
+# golang output binary directory
+bin  
+
