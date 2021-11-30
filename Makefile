@@ -8,6 +8,7 @@ build: gomodgen
 	env GOARCH=amd64 GOOS=linux go build -ldflags="-s -w" -o bin/deleteAuthor deleteAuthor/deleteAuthor.go
 	env GOARCH=amd64 GOOS=linux go build -ldflags="-s -w" -o bin/getAuthor getAuthor/getAuthor.go
 	env GOARCH=amd64 GOOS=linux go build -ldflags="-s -w" -o bin/getAuthorName getAuthorName/getAuthorName.go
+	env GOARCH=amd64 GOOS=linux go build -ldflags="-s -w" -o bin/addArticle addArticle/addArticle.go
 clean:
 	rm -rf ./bin ./vendor go.sum
 

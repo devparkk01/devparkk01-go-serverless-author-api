@@ -14,8 +14,8 @@ provider:
     - Effect: Allow
       Action:
         - dynamodb:*
-      Resource:
-        - arn:aws:dynamodb:us-east-1:601895526431:table/authors-table
+      Resource: "arn:aws:dynamodb:*:*:*"
+
 
 
 package:
@@ -27,44 +27,52 @@ functions:
   world:
     handler: bin/world
     events:
-      - httpApi:
+      - http:
           path: /world
           method: get
   addAuthor:
     handler: bin/addAuthor
     events:
-      - httpApi:
-          path: /addAuthor
+      - http:
+          path: /author
           method: post
   deleteAuthor:
     handler: bin/deleteAuthor
     events:
-      - httpApi:
-          path: /deleteAuthor/{author_id}
+      - http:
+          path: /author/{author_id}
           method: delete
 
   updateAuthor:
     handler: bin/updateAuthor
     events:
-      - httpApi:
-          path: /updateAuthor/{author_id}
+      - http:
+          path: /author/{author_id}
           method: put
 
   getAuthor:
     handler: bin/getAuthor
     events:
-      - httpApi:
-          path: /getAuthor/{author_id}
+      - http:
+          path: /author/{author_id}
           method: get 
-
-
+          cors: true
 
   getAuthorName:
     handler: bin/getAuthorName
     events:
-      - httpApi:
-          path: /getAuthorName/{author_id}
+      - http:
+          path: /authorName/{author_id}
           method: get 
+
+  addArticle:
+    handler: bin/addArticle
+    events:
+      - http:
+          path: /article
+          method: post
+
+
 
 resources:
   Resources:

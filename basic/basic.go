@@ -17,6 +17,7 @@ type Item struct {
 	LastName string `json:"lastName"`
 }
 
+
 func Post(body string) (Item, error) {
 	// Create the dynamo client object
 	mySession := session.Must(session.NewSession())
