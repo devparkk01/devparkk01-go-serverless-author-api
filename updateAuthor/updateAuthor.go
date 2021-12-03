@@ -22,7 +22,7 @@ func handler(request events.APIGatewayProxyRequest)(Response , error) {
 	if err != nil {
 		return Response{
 			Body: "Error",
-			StatusCode: 500,
+			StatusCode: 400,
 		},nil
 	}
 
