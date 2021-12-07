@@ -22,7 +22,7 @@ func handler(request events.APIGatewayProxyRequest)(Response , error) {
 	fullName := fmt.Sprintf("%s %s" , thisItem.FirstName , thisItem.LastName)
 
 	body , _ := json.Marshal(map[string]interface{}{
-		"name" : fullName , 
+		"author_name" : fullName , 
 	})
 
 	return Response{Body : string(body) , StatusCode: 200} , nil 
